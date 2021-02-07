@@ -22,6 +22,6 @@ namespace USPSAddressVerfication.Models
         public string State { get; set; }
 
         [Required]
-        public string Zip5 { get; set; }
+        public uint Zip5 { get; set; }
     }
 }

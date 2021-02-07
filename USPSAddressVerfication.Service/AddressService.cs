@@ -27,7 +27,7 @@ namespace USPSAddressVerfication.Service
                         new XElement("Address2", model.Address2),
                         new XElement("City", model.City),
                         new XElement("State", model.State),
-                        new XElement("Zip5", model.Zip5),
+                        new XElement("Zip5", model.Zip5.ToString()),
                         new XElement("Zip4", "")
                         )
                     )
