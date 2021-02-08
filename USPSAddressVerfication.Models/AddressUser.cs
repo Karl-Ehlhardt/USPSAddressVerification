@@ -5,18 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace USPSAddressVerfication.Data
+namespace USPSAddressVerfication.Models
 {
-
-    public class Address
+    public class AddressUser
     {
-        [Key]
-        public int AddressId { get; set; }
-
         [Required]
         public string Address1 { get; set; }
 
-        [Required]
         public string Address2 { get; set; }
 
         [Required]
@@ -26,10 +21,7 @@ namespace USPSAddressVerfication.Data
         public string State { get; set; }
 
         [Required]
+        [RegularExpression(@"^[0-9]{5}$")]
         public string Zip5 { get; set; }
-
-        public string Zip4 { get; set; }
     }
-
-
 }
