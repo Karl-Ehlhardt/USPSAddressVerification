@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using USPSAddressVerfication.Data;
-using USPSAddressVerfication.Models;
+using USPSAddressVerification.Data;
+using USPSAddressVerification.Models;
 using System.Net;
 using System.Net.Http;
 using System.IO;
 using System.Linq;
 using System.Data.Entity;
 
-namespace USPSAddressVerfication.Service
+namespace USPSAddressVerification.Service
 {
     public class AddressService
     {
@@ -60,7 +60,7 @@ namespace USPSAddressVerfication.Service
 
             XDocument request = new XDocument(
                 new XElement("AddressValidateRequest", 
-                        new XAttribute("USERID", "879COPPE3197"),//Enter your own USPS web tools user Id here in place of the XXXXX
+                        new XAttribute("USERID", "XXXXX"),//Enter your own USPS web tools user Id here in place of the XXXXX
                     new XElement("Revision", "1"),
                     new XElement("Address",
                             new XAttribute("ID", "0"),

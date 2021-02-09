@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using USPSAddressVerfication.Data;
-using USPSAddressVerfication.Models;
-using USPSAddressVerfication.Service;
+using USPSAddressVerification.Data;
+using USPSAddressVerification.Models;
+using USPSAddressVerification.Service;
 
-namespace USPSAddressVerfication.Controllers
+namespace USPSAddressVerification.Controllers
 {
     public class AddressController : Controller
     {

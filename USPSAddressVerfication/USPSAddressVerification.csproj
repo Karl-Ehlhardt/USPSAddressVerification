@@ -291,17 +291,17 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\USPSAddressVerfication.Data\USPSAddressVerfication.Data.csproj">
+    <ProjectReference Include="..\USPSAddressVerfication.Data\USPSAddressVerification.Data.csproj">
       <Project>{996f2cab-01fb-4ed2-a481-bda69a82806a}</Project>
-      <Name>USPSAddressVerfication.Data</Name>
+      <Name>USPSAddressVerification.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\USPSAddressVerfication.Models\USPSAddressVerfication.Models.csproj">
+    <ProjectReference Include="..\USPSAddressVerfication.Models\USPSAddressVerification.Models.csproj">
       <Project>{25b5b2db-a7ac-43ce-8081-55d2c4797a64}</Project>
-      <Name>USPSAddressVerfication.Models</Name>
+      <Name>USPSAddressVerification.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\USPSAddressVerfication.Service\USPSAddressVerfication.Service.csproj">
+    <ProjectReference Include="..\USPSAddressVerfication.Service\USPSAddressVerification.Service.csproj">
       <Project>{dcc9e571-7c6a-4ef6-8d3d-7c45d197e004}</Project>
-      <Name>USPSAddressVerfication.Service</Name>
+      <Name>USPSAddressVerification.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

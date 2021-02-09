@@ -58,13 +58,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\USPSAddressVerfication.Data\USPSAddressVerfication.Data.csproj">
+    <ProjectReference Include="..\USPSAddressVerfication.Data\USPSAddressVerification.Data.csproj">
       <Project>{996f2cab-01fb-4ed2-a481-bda69a82806a}</Project>
-      <Name>USPSAddressVerfication.Data</Name>
+      <Name>USPSAddressVerification.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\USPSAddressVerfication.Models\USPSAddressVerfication.Models.csproj">
+    <ProjectReference Include="..\USPSAddressVerfication.Models\USPSAddressVerification.Models.csproj">
       <Project>{25b5b2db-a7ac-43ce-8081-55d2c4797a64}</Project>
-      <Name>USPSAddressVerfication.Models</Name>
+      <Name>USPSAddressVerification.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

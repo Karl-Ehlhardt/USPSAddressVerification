@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using USPSAddressVerfication.Data;
+using USPSAddressVerification.Data;
 
-namespace USPSAddressVerfication.Models
+namespace USPSAddressVerification.Models
 {
     public class AddressChoice
     {

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPSAddressVerfication", "USPSAddressVerfication\USPSAddressVerfication.csproj", "{3781CBB8-1ED8-43B0-8EFA-15E555CAC903}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPSAddressVerification", "USPSAddressVerfication\USPSAddressVerification.csproj", "{3781CBB8-1ED8-43B0-8EFA-15E555CAC903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPSAddressVerfication.Data", "USPSAddressVerfication.Data\USPSAddressVerfication.Data.csproj", "{996F2CAB-01FB-4ED2-A481-BDA69A82806A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPSAddressVerification.Data", "USPSAddressVerfication.Data\USPSAddressVerification.Data.csproj", "{996F2CAB-01FB-4ED2-A481-BDA69A82806A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPSAddressVerfication.Service", "USPSAddressVerfication.Service\USPSAddressVerfication.Service.csproj", "{DCC9E571-7C6A-4EF6-8D3D-7C45D197E004}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPSAddressVerification.Service", "USPSAddressVerfication.Service\USPSAddressVerification.Service.csproj", "{DCC9E571-7C6A-4EF6-8D3D-7C45D197E004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPSAddressVerfication.Models", "USPSAddressVerfication.Models\USPSAddressVerfication.Models.csproj", "{25B5B2DB-A7AC-43CE-8081-55D2C4797A64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USPSAddressVerification.Models", "USPSAddressVerfication.Models\USPSAddressVerification.Models.csproj", "{25B5B2DB-A7AC-43CE-8081-55D2C4797A64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

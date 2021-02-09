@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace USPSAddressVerfication.Data
+namespace USPSAddressVerification.Data
 {
 
     public class Address

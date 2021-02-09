@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace USPSAddressVerfication.Models
+namespace USPSAddressVerification.Models
 {
     public class AddressUSPS
     {

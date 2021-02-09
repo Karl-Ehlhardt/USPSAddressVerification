@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace USPSAddressVerfication
+namespace USPSAddressVerification
 {
     public class BundleConfig
     {
