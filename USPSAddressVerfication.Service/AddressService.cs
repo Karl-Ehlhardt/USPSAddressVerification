@@ -36,9 +36,23 @@ namespace USPSAddressVerfication.Service
             return await _context.SaveChangesAsync() == 1;
         }
 
-        //Get Verified Address, return both
-        public async Task<AddressChoice> GetVerifiedAddress()
+        //Get all addresses for display
+        public async Task<IEnumerable<Address>> GetAddressesList()
         {
+            List<Address> list =
+                        await
+                    _context
+                    .Addresses
+                    .ToListAsync();
+
+            return (list);
+        }
+
+        //Get Verified Address, return both
+        public async Task<AddressChoice> GetUserAndVerifiedAddress()
+        {
+        // Your Username is 879COPPE3197
+        // Your Password is 600MX56KR504
             Address model =
                         await
                     _context
@@ -47,12 +61,12 @@ namespace USPSAddressVerfication.Service
 
             XDocument request = new XDocument(
                 new XElement("AddressValidateRequest", 
-                        new XAttribute("USERID", "XXX"),
+                        new XAttribute("USERID", "879COPPE3197"),
                     new XElement("Revision", "1"),
                     new XElement("Address",
                             new XAttribute("ID", "0"),
-                        new XElement("Address1", model.Address1),
-                        new XElement("Address2", model.Address2),
+                        new XElement("Address1", model.Address1),//Appartment/Suite number
+                        new XElement("Address2", model.Address2),//Address
                         new XElement("City", model.City),
                         new XElement("State", model.State),
                         new XElement("Zip5", model.Zip5.ToString()),
@@ -65,6 +79,7 @@ namespace USPSAddressVerfication.Service
 
             try
             {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 string url = "https://secure.shippingapis.com/ShippingAPI.dll?API=Verify&XML=" + request;
 
                 using (HttpClient client = new HttpClient())
@@ -81,8 +96,8 @@ namespace USPSAddressVerfication.Service
                 
                 foreach (XElement el in xDoc.Descendants("Address"))
                 {
-                    uSPS.Address1 = GetXMLElement(el, "Address1");
-                    uSPS.Address2 = GetXMLElement(el, "Address2");
+                    uSPS.Address1 = GetXMLElement(el, "Address1");//Appartment/Suite number
+                    uSPS.Address2 = GetXMLElement(el, "Address2");//Address
                     uSPS.City = GetXMLElement(el, "City");
                     uSPS.State = GetXMLElement(el, "State");
                     uSPS.Zip5 = GetXMLElement(el, "Zip5");
@@ -99,9 +114,10 @@ namespace USPSAddressVerfication.Service
         }
 
         //Update Address to the final choice
-        public async Task<bool> FinalChoice(int id, AddressUSPS model)
+        public async Task<bool> FinalChoice(AddressUSPS model)
         {
-            if (!model.Picked)
+
+            if (model.Picked == false)
             {
                 return true;
             }
@@ -109,8 +125,8 @@ namespace USPSAddressVerfication.Service
             Address address =
                         await
                     _context
-                    .Addresses
-                    .SingleAsync(a => a.AddressId == id);
+                    .Addresses.OrderByDescending(p => p.AddressId)
+                    .FirstOrDefaultAsync();
 
             address.Address1 = model.Address1;
             address.Address2 = model.Address2;
@@ -133,5 +149,6 @@ namespace USPSAddressVerfication.Service
             }
             return "";
         }
+
     }
 }

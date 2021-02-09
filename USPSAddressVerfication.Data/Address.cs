@@ -13,11 +13,12 @@ namespace USPSAddressVerfication.Data
         [Key]
         public int AddressId { get; set; }
 
-        [Required]
-        public string Address1 { get; set; }
+        [Display(Name = "Appartment/Suite")]
+        public string Address1 { get; set; }//Appartment/Suite number
 
+        [Display(Name = "Address")]
         [Required]
-        public string Address2 { get; set; }
+        public string Address2 { get; set; }//street address
 
         [Required]
         public string City { get; set; }

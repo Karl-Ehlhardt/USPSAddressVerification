@@ -9,9 +9,11 @@ namespace USPSAddressVerfication.Models
 {
     public class AddressUSPS
     {
-        public string Address1 { get; set; }
+        [Display(Name = "Appartment/Suite")]
+        public string Address1 { get; set; }//Appartment/Suite number
 
-        public string Address2 { get; set; }
+        [Display(Name = "Address")]
+        public string Address2 { get; set; }//street address
 
         public string City { get; set; }
 
