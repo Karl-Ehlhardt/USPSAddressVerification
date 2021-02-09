@@ -19,7 +19,7 @@ namespace USPSAddressVerfication.Controllers
             return addressService;
         }
 
-
+        //List all addreses
         public async Task<ActionResult> AddressList()
         {
             AddressService service = CreateAddressService();
@@ -29,7 +29,6 @@ namespace USPSAddressVerfication.Controllers
             return View(mymodel);
         }
 
-        //Add method here VVVV
         //GET
         public ActionResult Create()
         {
@@ -37,6 +36,7 @@ namespace USPSAddressVerfication.Controllers
             return View();
         }
 
+        //Creates the address in the database then directs to the Coice screen
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(AddressUser model)
@@ -55,6 +55,7 @@ namespace USPSAddressVerfication.Controllers
             return View(model);
         }
 
+        //Loads to display both the user entered address and 
         public async Task<ActionResult> Choice()
         {
             AddressService service = CreateAddressService();
@@ -64,6 +65,7 @@ namespace USPSAddressVerfication.Controllers
             return View(mymodel);
         }
 
+        //Returns the AddressUSPS model only, along with weather it is being saved, then the service performs the requested action
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Choice([Bind(Prefix = "AddressUSPS")] AddressUSPS model)

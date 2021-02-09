@@ -10,6 +10,7 @@ namespace USPSAddressVerfication.Data
 
     public class Address
     {
+        //Reference: https://www.usps.com/business/web-tools-apis/address-information-api.pdf
         [Key]
         public int AddressId { get; set; }
 

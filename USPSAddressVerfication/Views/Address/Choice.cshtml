@@ -4,120 +4,100 @@
     ViewBag.Title = "Choice";
 }
 
-<h2>Choice</h2>
+<hr />
+<table class="table">
+    <thead>
+        <tr><h4>Your entered address</h4></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.Address.Address2, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.Address.Address2, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
 
-<div class="form-horizontal">
-    <h4>Your entered address</h4>
-    <hr />
-    <div class="form-group">
-        @Html.LabelFor(model => model.Address.Address2, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.Address.Address2, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.Address.Address1, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.Address.Address1, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Address.Address1, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.Address.Address1, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.Address.City, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.Address.City, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Address.City, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.Address.City, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.Address.State, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.Address.State, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Address.State, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.Address.State, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.Address.Zip5, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.Address.Zip5, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
+    </tbody>
+</table>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Address.Zip5, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.Address.Zip5, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
-</div>
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
     <div class="form-horizontal">
 
         <div class="form-group">
-            <p>Check this box if you'd like to use the USPS address below in place of the one you entered</p>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AddressUSPS.Picked, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
+            <h4>
+                @Html.EditorFor(model => model.AddressUSPS.Picked, new { htmlAttributes = new { @class = "form-check-input" } })
+                Check this if you'd like to use the USPS address below in place of the one you entered
+            </h4>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Confirm" class="btn btn-default" />
+                <input type="submit" value="Confirm" class="btn btn-danger" />
             </div>
         </div>
-
-        <h4>USPS official address </h4>
-        <hr />
-
-        
-        <div class="form-group">
-            @Html.LabelFor(model => model.AddressUSPS.Address2, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.AddressUSPS.Address2, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.HiddenFor(model => model.AddressUSPS.Address2)
-            </div>
-        </div>
-
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.AddressUSPS.Address1, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.AddressUSPS.Address1, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.HiddenFor(model => model.AddressUSPS.Address1)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AddressUSPS.City, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.AddressUSPS.City, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.HiddenFor(model => model.AddressUSPS.City)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AddressUSPS.State, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.AddressUSPS.State, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.HiddenFor(model => model.AddressUSPS.State)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AddressUSPS.Zip5, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.AddressUSPS.Zip5, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.HiddenFor(model => model.AddressUSPS.Zip5)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AddressUSPS.Zip4, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.AddressUSPS.Zip4, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.HiddenFor(model => model.AddressUSPS.Zip4)
-            </div>
-        </div>
-
+        @Html.HiddenFor(model => model.AddressUSPS.Address2)
+        @Html.HiddenFor(model => model.AddressUSPS.Address1)
+        @Html.HiddenFor(model => model.AddressUSPS.City)
+        @Html.HiddenFor(model => model.AddressUSPS.State)
+        @Html.HiddenFor(model => model.AddressUSPS.Zip5)
+        @Html.HiddenFor(model => model.AddressUSPS.Zip4)
     </div>
-}
+    }
+
+<table class="table">
+    <thead>
+        <tr><h4>USPS official address</h4></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.AddressUSPS.Address2, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.AddressUSPS.Address2, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.AddressUSPS.Address1, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.AddressUSPS.Address1, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.AddressUSPS.City, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.AddressUSPS.City, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.AddressUSPS.State, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.AddressUSPS.State, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.AddressUSPS.Zip5, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.AddressUSPS.Zip5, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.LabelFor(model => model.AddressUSPS.Zip4, htmlAttributes: new { @class = "" })</th>
+            <td>@Html.DisplayFor(model => model.AddressUSPS.Zip4, new { htmlAttributes = new { @class = "" } })</td>
+        </tr>
+    </tbody>
+</table>
+
 

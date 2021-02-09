@@ -19,7 +19,7 @@ namespace USPSAddressVerfication.Service
         //private context
         private AddressDbContext _context = new AddressDbContext();
 
-        //Create an address from User input, will change to the final choice later
+        //Creates an address from User input, will change to the final choice later or stay the same
         public async Task<bool> CreateAddress(AddressUser model)
         {
             Address address =
@@ -51,8 +51,7 @@ namespace USPSAddressVerfication.Service
         //Get Verified Address, return both
         public async Task<AddressChoice> GetUserAndVerifiedAddress()
         {
-        // Your Username is 879COPPE3197
-        // Your Password is 600MX56KR504
+            //Reference: https://www.usps.com/business/web-tools-apis/address-information-api.pdf for more information
             Address model =
                         await
                     _context
@@ -61,7 +60,7 @@ namespace USPSAddressVerfication.Service
 
             XDocument request = new XDocument(
                 new XElement("AddressValidateRequest", 
-                        new XAttribute("USERID", "879COPPE3197"),
+                        new XAttribute("USERID", "879COPPE3197"),//Enter your own USPS web tools user Id here in place of the XXXXX
                     new XElement("Revision", "1"),
                     new XElement("Address",
                             new XAttribute("ID", "0"),

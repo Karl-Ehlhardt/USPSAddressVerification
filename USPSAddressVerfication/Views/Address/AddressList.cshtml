@@ -3,65 +3,35 @@
 @{
     ViewBag.Title = "AddressList";
 }
-
-<h2>AddressList</h2>
-
+<hr />
 <div>
-    <h4>Address</h4>
+    <h4>Address(es) in the database</h4>
     <hr />
-    @foreach (var item in Model)
-    {
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Address2)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => item.Address2)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Address1)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => item.Address1)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.City)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => item.City)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.State)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => item.State)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Zip5)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => item.Zip5)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Zip4)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => item.Zip4)
-            </dd>
-
-        </dl>
-    }
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col"> @Html.DisplayNameFor(model => model.Address2) </th>
+                <th scope="col"> @Html.DisplayNameFor(model => model.Address1) </th>
+                <th scope="col"> @Html.DisplayNameFor(model => model.City) </th>
+                <th scope="col"> @Html.DisplayNameFor(model => model.State) </th>
+                <th scope="col"> @Html.DisplayNameFor(model => model.Zip5) </th>
+                <th scope="col"> @Html.DisplayNameFor(model => model.Zip4) </th>
+            </tr>
+        </thead>
+            <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(model => item.Address2)</td>
+                    <td>@Html.DisplayFor(model => item.Address1)</td>
+                    <td>@Html.DisplayFor(model => item.City)</td>
+                    <td>@Html.DisplayFor(model => item.State)</td>
+                    <td>@Html.DisplayFor(model => item.Zip5)</td>
+                    <td>@Html.DisplayFor(model => item.Zip4)</td>
+                </tr>
+        }
+            </tbody>
+        </table>
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index", "Home")

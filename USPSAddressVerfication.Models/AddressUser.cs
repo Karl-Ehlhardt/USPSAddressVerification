@@ -20,14 +20,14 @@ namespace USPSAddressVerfication.Models
         public string City { get; set; }
 
         [Required]
-        [RegularExpression(@"^[A-Z]{2}$", ErrorMessage = "Please follow the instructions")]
         public string State { get; set; }
 
         [Required]
-        [RegularExpression(@"^[0-9]{5}$")]
-        [Display(Name = "Zip")]
+        [RegularExpression(@"^[0-9]{5}$", ErrorMessage = "Please enter a 5 diget zipcode")]
+        [Display(Name = "5 Digit Zip Code")]
         public string Zip5 { get; set; }
 
+        //These are the dorpdown choices to reduce errors
         public enum States
         {
 
